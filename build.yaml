@@ -1,0 +1,37 @@
+builders:
+  env_generator:
+    import: "package:flutter_env_gen/builder.dart"
+    builder_factories: ["envGeneratorBuilder"]
+    build_extensions:
+      "pubspec.yaml": ["lib/config/env.g.dart"]
+    auto_apply: dependents
+    build_to: source
+    defaults:
+      options:
+        # Default environment files to parse
+        env_files:
+          - ".env"
+          - ".env.dev"
+          - ".env.staging"
+          - ".env.production"
+
+        # Output configuration
+        output_path: "lib/config/env.g.dart"
+        class_name: "Env"
+
+        # Field naming convention
+        # Options: none, snake_to_camel, snake_to_pascal, kebab_to_camel
+        field_rename: snake_to_camel
+
+        # Keys that should be obfuscated (contains check)
+        sensitive_keys:
+          - "KEY"
+          - "SECRET"
+          - "TOKEN"
+          - "PASSWORD"
+
+        # Keys that must exist in env files
+        required_keys: []
+
+        # Generate runtime loader for sensitive values
+        generate_loader: false

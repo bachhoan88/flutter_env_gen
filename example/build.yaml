@@ -1,0 +1,32 @@
+# Custom configuration for the example project
+targets:
+  $default:
+    builders:
+      flutter_env_gen:env_generator:
+        options:
+          # Specify which env files to use
+          env_files:
+            - ".env.dev"
+            - ".env.staging"
+            - ".env.production"
+
+          # Output path
+          output_path: "lib/config/env.g.dart"
+
+          # Class name
+          class_name: "AppConfig"
+
+          # Transform SNAKE_CASE to camelCase
+          field_rename: snake_to_camel
+
+          # Keys containing these strings will be obfuscated
+          sensitive_keys:
+            - "KEY"
+            - "SECRET"
+            - "TOKEN"
+            - "PASSWORD"
+
+          # These keys must exist in all env files
+          required_keys:
+            - "API_BASE_URL"
+            - "APP_NAME"
