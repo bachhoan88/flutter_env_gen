@@ -37,7 +37,7 @@ class CodeGenerator {
     final code = library.accept(emitter).toString();
 
     try {
-      return DartFormatter().format(code);
+      return DartFormatter(languageVersion: DartFormatter.latestLanguageVersion).format(code);
     } catch (e) {
       // If formatting fails, return unformatted code
       return code;

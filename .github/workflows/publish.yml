@@ -20,16 +20,16 @@ jobs:
           sdk: stable
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
 
       - name: Format check
-        run: dart format --output=none --set-exit-if-changed .
+        run: flutter format --output=none --set-exit-if-changed .
 
       - name: Analyze
-        run: dart analyze --fatal-infos
+        run: flutter analyze --fatal-infos
 
       - name: Run tests
-        run: dart test --coverage="coverage"
+        run: flutter test --coverage="coverage"
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -53,7 +53,7 @@ jobs:
           sdk: stable
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
 
       - name: Setup credentials
         run: |
