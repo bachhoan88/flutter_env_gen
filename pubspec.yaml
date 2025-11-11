@@ -1,6 +1,6 @@
 name: flutter_env_gen
 description: Type-safe environment configuration generator for Flutter. Generate strongly-typed Dart code from .env files with automatic type detection and compile-time constants.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/bachhoan88/flutter_env_gen
 repository: https://github.com/bachhoan88/flutter_env_gen
 issue_tracker: https://github.com/bachhoan88/flutter_env_gen/issues
