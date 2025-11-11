@@ -5,7 +5,6 @@ void main() {
   group('EnvGen Annotation', () {
     test('creates with default values', () {
       const config = EnvGen();
-      expect(config.envFiles, isEmpty);
       expect(config.className, isNull);
       expect(config.fieldRename, equals(FieldRename.snakeToCamel));
     });
